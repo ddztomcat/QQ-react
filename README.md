@@ -1,5 +1,5 @@
-# react-starter-template
-> react PC 项目启动脚手架  ✅webpack@4  ✅react@16 ✅mobx@5 ✅antd@3
+# QQ-react
+> react PC 项目启动脚手架  ✅webpack@4  ✅react@16 ✅mobx@5 ✅antd-mobile@3
 
 ### src目录结构
 ```javascript
