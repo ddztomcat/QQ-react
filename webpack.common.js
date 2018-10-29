@@ -47,7 +47,7 @@ module.exports = {
         test: /^((?!global).)*\.(sa|sc|c)ss$/, // 匹配不带global的 && !/node_modules/
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           "css-loader?modules&localIdentName=[name]-[hash:base64:5]",
           "postcss-loader",
           "sass-loader"
@@ -57,7 +57,7 @@ module.exports = {
         test: /^(.*?)(\.(global))\.(sa|sc|c)ss$/, // 匹配带global的 && !/node_modules/
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "sass-loader"
@@ -67,7 +67,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/, // 匹配不带global的 && /node_modules/
         include: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "sass-loader"
@@ -77,15 +77,15 @@ module.exports = {
         test: /\.styl$/,
         include: path.resolve(__dirname, "src"),
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "stylus-loader"
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        use: ["url-loader?limit=8192&name=[name].[ext]&outputPath=images/"]
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        use: ["url-loader?limit=8192&name=assets/[name]_[hash:8].[ext]"]
       }
     ]
   },

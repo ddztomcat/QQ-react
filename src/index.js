@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
-import App from '@/routes';
-import './styles/reset.global.css';
-/* eslint-disable-next-line */
-let T = hot(module)(App);
+import App from '@/view';
 ReactDOM.render(
   <HashRouter>
-    <T />
+    <App />
   </HashRouter>,
   document.getElementById('root')
 );
