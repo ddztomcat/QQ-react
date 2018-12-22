@@ -1,5 +1,7 @@
 # QQ-react
 > react PC 项目启动脚手架  ✅webpack@4  ✅react@16 ✅mobx@5 ✅antd-mobile@3
+### 原型地址
+[qq原型](https://www.xiaopiu.com/h5/byId?type=project&id=5949fa6bc2e9438f0c589e07)
 
 ### src目录结构
 ```javascript
